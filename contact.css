@@ -1,0 +1,95 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: poppins;
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    gap: 60%;
+    margin: 3%;
+    margin-left: 100px;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    font-weight: 550;
+    color: black;
+}
+
+ .top   a:hover{
+    color: rgb(10, 149, 149);
+}
+h3{
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    gap: 10px;
+}
+i{
+    margin-top: 20px;
+}
+
+span{
+    color: rgb(10, 149, 149);
+}
+
+.main1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+    gap: 40px;
+}
+input{
+    width: 250px;
+    height: 50px;
+    background-color: #bebcbc;
+    border: transparent;
+    border-radius: 10px;
+    
+}
+input[type="text"]::-webkit-input-placeholder {
+    padding-left: 20px;
+    font-weight: 600;
+    color:rgb(10, 149, 149) ;
+}
+textarea{
+    margin-top: -5%;
+    background-color: #bebcbc;
+    border-radius: 10px;
+    border: none;
+}
+textarea::-webkit-input-placeholder {
+    padding-left: 20px;
+    padding-top: 10px;
+    font-weight: 600;
+    color:rgb(10, 149, 149) ;
+}
+.btn{
+    width: 110px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color:#bebcbc ;
+    background-color:rgb(10, 149, 149);
+    border-color: transparent;
+}
+.btn:hover{
+    font-size: 14px;
+}

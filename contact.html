@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300;1,400&display=swap');
+    </style>
+    <link rel="stylesheet" href="./contact.css">
+    <script src="https://kit.fontawesome.com/1d2f988520.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h3 class="port"><i class="fa-solid fa-bolt fa-2xl" style="color: #000000;"></i>Portfolio</h3>
+            <ul class="top">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./skills.html">Skills</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main1">
+        <h1 class="heading">Contact <span>Me</span></h1>
+        <div class="inside1">
+            <input class="in1" type="text" placeholder="Full Name">
+            <input class="in1" id="mail" type="text" placeholder="Email Address">
+        </div>
+        <div class="inside2">
+            <textarea placeholder="Your Message" id="msg" name="" id="" cols="67" rows="10" style="resize: none"></textarea>
+        </div>
+        <div class="button">
+            <button class="btn" onclick="getdata()">Send Message</button>
+        </div>
+    </div>
+</body>
+<script>
+    const getdata = ()=>{
+        const mail = document.getElementById("mail").value
+        const msg = document.getElementById("msg").value
+        const enter = {
+            email:mail,
+            text :msg
+        }
+        sendmail(enter);
+    }
+    const sendmail = async(enter)=>{
+        try {
+            const resp = await fetch("http://localhost:3000/send", {
+                method: "POST",
+                redirect:"follow",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(enter)
+            });
+        
+        const result = await resp.json();
+        alert("message sent..!");
+        console.log(result.data);
+           }   catch (error){
+            console.log(error.message)
+        }
+    }
+</script>
+</html>
